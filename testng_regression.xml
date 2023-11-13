@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+	<listeners>
+		<listener class-name="com.Mohs10.utility.ListenerClass" />
+		<listener class-name="com.Mohs10.utility.TestallureListener" />
+	</listeners>
+
+	<test thread-count="5" name="Regression">
+		<parameter name="browser" value="Chrome"></parameter>
+		<groups>
+			<run>
+				<include name="Regression"></include>
+			</run>
+		</groups>
+
+		<classes>
+			<class name="com.Mohs10.TestScripts.HomePage_Login" />
+			<class name="com.Mohs10.TestScripts.Register_Test" />
+			<class name="com.Mohs10.Reports.PDFReportTest" />
+			<class name="com.Mohs10.Dashboard.TablesTest" />
+		</classes>
+
+	</test> <!--Test -->
+</suite> <!--Suite -->
